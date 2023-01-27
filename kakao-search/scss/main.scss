@@ -1,0 +1,70 @@
+@import "vars";
+@import "mixins";
+.visual__list {
+  width: 100%;
+  height: 100vh;
+  li {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    &.visual01 {
+      background-image: url("../images/main/visual01.jpg");
+    }
+    &.visual02 {
+      background-image: url("../images/main/visual02.jpg");
+    }
+    &.visual03 {
+      background-image: url("../images/main/visual03.jpg");
+    }
+  }
+  .pagination {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+    .swiper-pagination-bullet {
+      opacity: 1;
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      &-active {
+        background-color: $blue;
+      }
+    }
+  }
+}
+.visual__txt {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  z-index: 2;
+  padding: 0 20px;
+  word-break: keep-all; // 글자 단위의 줄바꿈을 하지 않는다.
+  transform: translateY(-50%);
+  h3 {
+    font-weight: 700;
+    font-size: clamp(24px, 7.5vw, 48px);
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+  }
+  br {
+    display: none;
+  }
+  .char {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+@keyframes showTxt {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
